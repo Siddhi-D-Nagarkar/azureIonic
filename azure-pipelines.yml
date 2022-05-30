@@ -19,14 +19,3 @@ stages:
           vmImage: $(vmImageName)
         steps:
           - template: ionic-android-debug-build.yml
-
-      # Release build
-      - job: Build_Ionic_Android_Release
-        variables:
-          - name: buildConfiguration
-            value: Release
-        displayName: Build Release
-        pool:
-          vmImage: $(vmImageName)
-        steps:
-          - template: ionic-android-release-build.yml
