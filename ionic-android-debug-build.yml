@@ -9,10 +9,10 @@ steps:
     displayName: "NPM Install"
 
   - powershell: |
-      ionic cap build android --no-open
-      npx cap sync
-      cd android
-      ./gradlew assemble$(buildConfiguration)
+      npm i -g cordova
+      ionic build
+      ionic cordova platform add android
+      ionic corodva build android
     workingDirectory: $(Build.SourcesDirectory)/$(projectName)
     displayName: "Build Android Project"
 
