@@ -3,7 +3,7 @@ trigger:
 
 variables:
   vmImageName: "windows-latest"
-  projectName: "SampleApp"
+  projectName: "azureIonic"
 
 stages:
   - stage: Build
