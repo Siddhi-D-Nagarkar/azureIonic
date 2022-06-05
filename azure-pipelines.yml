@@ -3,12 +3,13 @@ trigger:
 
 variables:
   vmImageName: "windows-latest"
-  projectName: "azureIonic"
+  projectName: "SampleApp"
 
 stages:
   - stage: Build
     displayName: Build Ionic - Android projects
     jobs:
+      # Debug build
       - job: Build_Ionic_Android_Debug
         variables:
           - name: buildConfiguration
@@ -17,14 +18,15 @@ stages:
         pool:
           vmImage: $(vmImageName)
         steps:
-          - task: CmdLine@2
-            inputs:
-              script: |
-                npm install -g ionic/cli
-                echo Write your commands here
-                echo %cd%
-                echo Hello world
-                dir
-          - powershell: |
-              ionic
-            displayName: "Build Android Project"
+          - template: ionic-android-debug-build.yml
+
+      # # Release build
+      # - job: Build_Ionic_Android_Release
+      #   variables:
+      #     - name: buildConfiguration
+      #       value: Release
+      #   displayName: Build Release
+      #   pool:
+      #     vmImage: $(vmImageName)
+      #   steps:
+      #     - template: ionic-android-release-build.yml

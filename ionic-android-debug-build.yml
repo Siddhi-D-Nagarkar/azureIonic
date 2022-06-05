@@ -13,7 +13,7 @@ steps:
       ionic build
       ionic cordova platform add android
       ionic corodva build android
-    workingDirectory: $(Build.SourcesDirectory)/$(projectName)
+    workingDirectory: $(Build.SourcesDirectory)
     displayName: "Build Android Project"
 
   - task: CopyFiles@2
