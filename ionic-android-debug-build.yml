@@ -19,7 +19,7 @@ steps:
 
   - task: CopyFiles@2
     inputs:
-      SourceFolder: "$(Build.SourcesDirectory)/android/app/build/outputs/apk/$(buildConfiguration)"
+      SourceFolder: "$(Build.SourcesDirectory)/platforms/android/app/build/outputs/apk/$(buildConfiguration)"
       contents: "**/app-$(buildConfiguration).apk"
       targetFolder: "$(Build.ArtifactStagingDirectory)"
     displayName: "Copy unsigned APK to staging directory"
