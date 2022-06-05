@@ -10,8 +10,9 @@ steps:
 
   - powershell: |
       ionic integration enable cordova
-       npm i -g cordova
+      npm i -g cordova
       ionic cordova platform add android
+      ng add @ionic/cordova-builders
       ionic cordova build android
     workingDirectory: $(Build.SourcesDirectory)
     displayName: "Build Android Project"
