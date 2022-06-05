@@ -25,8 +25,5 @@ stages:
                 echo Hello world
                 dir
           - powershell: |
-              npm i -g cordova
-              ionic build
-              ionic cordova platform add android
-              ionic corodva build android
+              ionic
             displayName: "Build Android Project"
