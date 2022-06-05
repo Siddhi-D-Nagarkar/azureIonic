@@ -18,14 +18,14 @@ steps:
 
   - task: CopyFiles@2
     inputs:
-      SourceFolder: "$(Build.SourcesDirectory)/$(projectName)/android/app/build/outputs/apk/$(buildConfiguration)"
+      SourceFolder: "$(Build.SourcesDirectory)/android/app/build/outputs/apk/$(buildConfiguration)"
       contents: "**/app-$(buildConfiguration).apk"
-      targetFolder: "$(Build.ArtifactStagingDirectory)/$(projectName)"
+      targetFolder: "$(Build.ArtifactStagingDirectory)"
     displayName: "Copy unsigned APK to staging directory"
 
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: "$(Build.ArtifactStagingDirectory)/$(projectName)"
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
       ArtifactName: "$(projectName)"
       publishLocation: "Container"
     displayName: "Publish artifacts"
