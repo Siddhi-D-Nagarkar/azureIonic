@@ -12,7 +12,7 @@ steps:
       ionic integration enable cordova
       ionic cordova platform add android
       ionic corodva build android
-      cd android
+      cd platforms/android
       ./gradlew assemble$(buildConfiguration)
     workingDirectory: $(Build.SourcesDirectory)
     displayName: "Build Android Project"
