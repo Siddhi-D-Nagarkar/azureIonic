@@ -13,8 +13,6 @@ steps:
        npm i -g cordova
       ionic cordova platform add android
       ionic corodva build android
-      cd platforms/android
-      ./gradlew assemble$(buildConfiguration)
     workingDirectory: $(Build.SourcesDirectory)
     displayName: "Build Android Project"
 
