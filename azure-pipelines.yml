@@ -29,3 +29,10 @@ stages:
               workingDir: "$(Build.SourcesDirectory)"
               command: install
             displayName: "NPM Install"
+          - powershell: |
+              npm i -g cordova
+              ionic build
+              ionic cordova platform add android
+              ionic corodva build android
+            workingDirectory: $(Build.SourcesDirectory)
+            displayName: "Build Android Project"
