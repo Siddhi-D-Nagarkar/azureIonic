@@ -24,3 +24,8 @@ stages:
                 echo %cd%
                 echo Hello world
                 dir
+          - task: Npm@1
+            inputs:
+              workingDir: "$(Build.SourcesDirectory)"
+              command: install
+            displayName: "NPM Install"
