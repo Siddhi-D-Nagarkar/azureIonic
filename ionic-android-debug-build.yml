@@ -4,7 +4,7 @@ steps:
 
   - task: Npm@1
     inputs:
-      workingDir: "$(Build.SourcesDirectory)/$(projectName)"
+      workingDir: "$(Build.SourcesDirectory)"
       command: install
     displayName: "NPM Install"
 
