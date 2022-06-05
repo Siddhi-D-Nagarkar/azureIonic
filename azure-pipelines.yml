@@ -23,3 +23,4 @@ stages:
                 echo Write your commands here
                 echo %cd%
                 echo Hello world
+                dir
