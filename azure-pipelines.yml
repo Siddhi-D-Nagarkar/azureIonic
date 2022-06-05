@@ -9,7 +9,6 @@ stages:
   - stage: Build
     displayName: Build Ionic - Android projects
     jobs:
-      # Debug build
       - job: Build_Ionic_Android_Debug
         variables:
           - name: buildConfiguration
@@ -18,4 +17,9 @@ stages:
         pool:
           vmImage: $(vmImageName)
         steps:
-          - template: ionic-android-debug-build.yml
+          - task: CmdLine@2
+            inputs:
+              script: |
+                echo Write your commands here
+                
+                echo Hello world
