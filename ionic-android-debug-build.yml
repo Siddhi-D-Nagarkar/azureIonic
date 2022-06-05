@@ -10,6 +10,7 @@ steps:
 
   - powershell: |
       ionic integration enable cordova
+       npm i -g cordova
       ionic cordova platform add android
       ionic corodva build android
       cd platforms/android
