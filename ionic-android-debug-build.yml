@@ -12,7 +12,7 @@ steps:
       ionic integration enable cordova
        npm i -g cordova
       ionic cordova platform add android
-      ionic corodva build android
+      ionic cordova build android
     workingDirectory: $(Build.SourcesDirectory)
     displayName: "Build Android Project"
 
