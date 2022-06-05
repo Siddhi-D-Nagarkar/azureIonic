@@ -20,6 +20,7 @@ stages:
           - task: CmdLine@2
             inputs:
               script: |
+                npm install -g ionic/cli
                 echo Write your commands here
                 echo %cd%
                 echo Hello world
