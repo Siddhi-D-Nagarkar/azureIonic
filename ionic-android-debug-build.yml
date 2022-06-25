@@ -1,12 +1,6 @@
 steps:
   - script: npm install -g @ionic/cli
     displayName: "Install Ionic CLI"
-  
-  - task: Cache@2
-    inputs:
-      key: 'package-lock.json'
-      path: '$(npm_config_cache)'
-    displayName: "Caching Bro"
 
   - powershell: | 
       npm ci --cache $(npm_config_cache)
@@ -26,6 +20,12 @@ steps:
     workingDirectory: $(Build.SourcesDirectory)
     displayName: "Build Android Project"
 
+  - task: Cache@2
+    inputs:
+      key: 'package-lock.json'
+      path: '$(npm_config_cache)'
+    displayName: "Caching Bro"
+  
   - task: CopyFiles@2
     inputs:
       SourceFolder: "$(Build.SourcesDirectory)/platforms/android/app/build/outputs/apk/$(buildConfiguration)"
