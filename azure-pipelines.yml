@@ -4,6 +4,7 @@ trigger:
 variables:
   vmImageName: "windows-latest"
   projectName: "SampleApp"
+  npm_config_cache: $(Pipeline.Workspace)/.npm
   
 
 stages:
