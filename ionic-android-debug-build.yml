@@ -1,7 +1,6 @@
 steps:
   - script: |
       npm install -g @ionic/cli
-      npm install -g cordova
     displayName: "Install Ionic CLI AND CORDOVA"
 
   - task: Cache@2
@@ -23,6 +22,7 @@ steps:
 
   - powershell: |
       ionic integration enable cordova
+      npm install -g cordova
       ionic cordova platform add android
       ionic cordova build android
     workingDirectory: $(Build.SourcesDirectory)
