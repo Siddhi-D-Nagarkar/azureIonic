@@ -16,12 +16,6 @@ steps:
       npm cache ls
       npm cache verify
     displayName: NPM Show cache
-      
-  - task: Npm@1
-    inputs:
-      workingDir: "$(Build.SourcesDirectory)"
-      command: install
-    displayName: "NPM Install"
 
   - powershell: |
       ionic integration enable cordova
