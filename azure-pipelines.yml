@@ -28,6 +28,11 @@ stages:
           - script: |
               npm ci --cache $(npm_config_cache)
             displayName: NPM Install Dependencies
+            
+          - script: |
+              npm cache ls
+              npm cache verify
+            displayName: NPM Show cache
 
       # # Release build
       # - job: Build_Ionic_Android_Release
