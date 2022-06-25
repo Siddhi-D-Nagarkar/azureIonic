@@ -1,8 +1,15 @@
 steps:
   - script: |
       npm install -g @ionic/cli
-      npm i -g cordova
+      npm install -g cordova
     displayName: "Install Ionic CLI AND CORDOVA"
+
+  - task: Cache@2
+    inputs:
+      key: "package-lock.json"
+      path: "$(npm_config_cache)"
+      cacheHitVar: CACHE_RESTORED
+    displayName: "Caching Bro"
 
   - powershell: |
       npm ci --cache $(npm_config_cache)
@@ -20,15 +27,7 @@ steps:
       ionic cordova build android
     workingDirectory: $(Build.SourcesDirectory)
     displayName: "Build Android Project"
-
     # npm install @ionic/cordova-builders
-  - task: Cache@2
-    inputs:
-      key: "package-lock.json"
-      path: "$(npm_config_cache)"
-      cacheHitVar: CACHE_RESTORED
-    displayName: "Caching Bro"
-
   - task: CopyFiles@2
     inputs:
       SourceFolder: "$(Build.SourcesDirectory)/platforms/android/app/build/outputs/apk/$(buildConfiguration)"
