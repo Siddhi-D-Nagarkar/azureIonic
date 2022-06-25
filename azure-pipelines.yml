@@ -24,6 +24,10 @@ stages:
             inputs:
               key: 'package-lock.json'
               path: '$(npm_config_cache)'
+          
+          - script: |
+              npm ci --cache $(npm_config_cache)
+            displayName: NPM Install Dependencies
 
       # # Release build
       # - job: Build_Ionic_Android_Release
