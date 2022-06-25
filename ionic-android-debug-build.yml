@@ -2,20 +2,20 @@ steps:
   - script: npm install -g @ionic/cli
     displayName: "Install Ionic CLI"
   
-  - task: Cache@2
-      inputs:
-        key: 'package-lock.json'
-        path: '$(npm_config_cache)'
-    displayName: "Caching Bro"
+  # - task: Cache@2
+  #     inputs:
+  #       key: 'package-lock.json'
+  #       path: '$(npm_config_cache)'
+  #   displayName: "Caching Bro"
 
-  - powershell: | 
-      npm ci --cache $(npm_config_cache)
-    displayName: NPM Install Dependencies
+  # - powershell: | 
+  #     npm ci --cache $(npm_config_cache)
+  #   displayName: NPM Install Dependencies
 
-  - powershell: |
-      npm cache ls
-      npm cache verify
-    displayName: NPM Show cache
+  # - powershell: |
+  #     npm cache ls
+  #     npm cache verify
+  #   displayName: NPM Show cache
       
   - task: Npm@1
     inputs:
