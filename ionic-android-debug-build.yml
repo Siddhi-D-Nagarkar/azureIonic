@@ -6,12 +6,12 @@ steps:
       inputs:
         key: 'package-lock.json'
         path: '$(npm_config_cache)'
-      displayName: "Caching Bro"
+    displayName: "Caching Bro"
 
   - powershell: | 
       npm ci --cache $(npm_config_cache)
     displayName: NPM Install Dependencies
-    
+
   - powershell: |
       npm cache ls
       npm cache verify
