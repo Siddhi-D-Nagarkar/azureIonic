@@ -3,9 +3,9 @@ steps:
     displayName: "Install Ionic CLI"
   
   - task: Cache@2
-      inputs:
-        key: 'package-lock.json'
-        path: '$(npm_config_cache)'
+    inputs:
+      key: 'package-lock.json'
+      path: '$(npm_config_cache)'
     displayName: "Caching Bro"
 
   # - powershell: | 
