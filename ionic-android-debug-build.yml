@@ -8,14 +8,14 @@ steps:
       path: '$(npm_config_cache)'
     displayName: "Caching Bro"
 
-  # - powershell: | 
-  #     npm ci --cache $(npm_config_cache)
-  #   displayName: NPM Install Dependencies
+  - powershell: | 
+      npm ci --cache $(npm_config_cache)
+    displayName: NPM Install Dependencies
 
-  # - powershell: |
-  #     npm cache ls
-  #     npm cache verify
-  #   displayName: NPM Show cache
+  - powershell: |
+      npm cache ls
+      npm cache verify
+    displayName: NPM Show cache
       
   - task: Npm@1
     inputs:
