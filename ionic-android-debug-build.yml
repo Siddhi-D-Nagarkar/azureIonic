@@ -10,7 +10,6 @@ steps:
   - powershell: | 
       npm ci --cache $(npm_config_cache)
     displayName: NPM Install Dependencies
-   
   - powershell: |
       npm cache ls
       npm cache verify
