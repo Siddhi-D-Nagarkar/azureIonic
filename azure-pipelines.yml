@@ -19,12 +19,12 @@ stages:
         pool:
           vmImage: $(vmImageName)
         steps:
-          - template: ionic-android-debug-build.yml
           - task: Cache@2
             inputs:
               key: 'package-lock.json'
               path: '$(npm_config_cache)'
             displayName: "Caching Bro"
+          - template: ionic-android-debug-build.yml
 
       # # Release build
       # - job: Build_Ionic_Android_Release
