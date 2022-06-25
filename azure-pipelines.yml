@@ -5,7 +5,7 @@ variables:
   vmImageName: "windows-latest"
   projectName: "SampleApp"
   npm_config_cache: $(Pipeline.Workspace)/.npm
-  
+  CACHE_RESTORED: "false"
 
 stages:
   - stage: Build
